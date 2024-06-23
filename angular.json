@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularLibraryStarter": {
+    "ngChatBuddy": {
       "projectType": "library",
-      "root": "projects/angular-library-starter",
-      "sourceRoot": "projects/angular-library-starter/src",
+      "root": "projects/ng-chat-buddy",
+      "sourceRoot": "projects/ng-chat-buddy/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/angular-library-starter/ng-package.json"
+            "project": "projects/ng-chat-buddy/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/angular-library-starter/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ng-chat-buddy/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/angular-library-starter/tsconfig.lib.json"
+              "tsConfig": "projects/ng-chat-buddy/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,43 +27,39 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "projects/angular-library-starter/tsconfig.spec.json"
+            "tsConfig": "projects/ng-chat-buddy/tsconfig.spec.json"
           }
         }
       }
     },
-    "angularLibraryStarterShowcase": {
+    "ngChatBuddyShowcase": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/angular-library-starter-showcase",
-      "sourceRoot": "projects/angular-library-starter-showcase/src",
+      "root": "projects/ng-chat-buddy-showcase",
+      "sourceRoot": "projects/ng-chat-buddy-showcase/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/angular-library-starter-showcase"
+              "base": "dist/ng-chat-buddy-showcase"
             },
-            "index": "projects/angular-library-starter-showcase/src/index.html",
-            "polyfills": [
-              "projects/angular-library-starter-showcase/src/polyfills.ts"
-            ],
-            "tsConfig": "projects/angular-library-starter-showcase/tsconfig.app.json",
+            "index": "projects/ng-chat-buddy-showcase/src/index.html",
+            "polyfills": ["projects/ng-chat-buddy-showcase/src/polyfills.ts"],
+            "tsConfig": "projects/ng-chat-buddy-showcase/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/angular-library-starter-showcase/src/favicon.ico",
-              "projects/angular-library-starter-showcase/src/assets"
+              "projects/ng-chat-buddy-showcase/src/favicon.ico",
+              "projects/ng-chat-buddy-showcase/src/assets"
             ],
-            "styles": [
-              "projects/angular-library-starter-showcase/src/styles.scss"
-            ],
+            "styles": ["projects/ng-chat-buddy-showcase/src/styles.scss"],
             "scripts": [],
-            "browser": "projects/angular-library-starter-showcase/src/main.ts"
+            "browser": "projects/ng-chat-buddy-showcase/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -81,8 +77,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "projects/angular-library-starter-showcase/src/environments/environment.ts",
-                  "with": "projects/angular-library-starter-showcase/src/environments/environment.prod.ts"
+                  "replace": "projects/ng-chat-buddy-showcase/src/environments/environment.ts",
+                  "with": "projects/ng-chat-buddy-showcase/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -100,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angularLibraryStarterShowcase:build:production"
+              "buildTarget": "ngChatBuddyShowcase:build:production"
             },
             "development": {
-              "buildTarget": "angularLibraryStarterShowcase:build:development"
+              "buildTarget": "ngChatBuddyShowcase:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -111,20 +107,18 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angularLibraryStarterShowcase:build"
+            "buildTarget": "ngChatBuddyShowcase:build"
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "projects/angular-library-starter-showcase/tsconfig.spec.json",
+            "tsConfig": "projects/ng-chat-buddy-showcase/tsconfig.spec.json",
             "assets": [
-              "projects/angular-library-starter-showcase/src/favicon.ico",
-              "projects/angular-library-starter-showcase/src/assets"
+              "projects/ng-chat-buddy-showcase/src/favicon.ico",
+              "projects/ng-chat-buddy-showcase/src/assets"
             ],
-            "styles": [
-              "projects/angular-library-starter-showcase/src/styles.scss"
-            ],
+            "styles": ["projects/ng-chat-buddy-showcase/src/styles.scss"],
             "scripts": []
           }
         }

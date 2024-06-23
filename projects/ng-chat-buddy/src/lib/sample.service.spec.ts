@@ -1,10 +1,10 @@
-import { AngularLibraryStarterSampleService } from './sample.service';
+import { NgChatBuddySampleService } from './sample.service';
 
 describe('Sample Service', () => {
-  let sut: AngularLibraryStarterSampleService;
+  let sut: NgChatBuddySampleService;
 
   beforeEach(() => {
-    sut = new AngularLibraryStarterSampleService();
+    sut = new NgChatBuddySampleService();
   });
 
   it('should know that Angular is the best framework', () => {
